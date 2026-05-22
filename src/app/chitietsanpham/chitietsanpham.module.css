@@ -1,0 +1,64 @@
+/* Định dạng class .slider mà bạn đang dùng trong file page.js */
+.slider {
+  width: 100%;
+  max-width: 600px; /* Độ rộng tối đa để khung không quá to */
+  height: auto;
+  border-radius: 12px; /* Bo góc mềm mại cho cái khung */
+  overflow: hidden; /* Cắt ảnh nếu nó tràn ra ngoài khung bo góc */
+  
+  /* Tạo hiệu ứng bóng đổ nhẹ, trông khung sẽ nổi khối và sang trọng hơn */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+  
+  /* Thêm một đường viền rất mỏng và sáng để tạo cảm giác tinh tế */
+  border: 1px solid #eaeaea; 
+  
+  /* Thêm khoảng đệm giữa đường viền và ảnh áo bên trong */
+  padding: 10px;
+  background-color: #ffffff; /* Màu nền trắng cho khung */
+  margin-bottom: 25px; /* Khoảng cách với phần tên sản phẩm bên dưới */
+}
+
+/* Đảm bảo ảnh áo nằm gọn gàng bên trong khung, không bị kéo dãn (giống mẹo "hết béo") */
+.slider :global(.slick-slide) Image,
+.slider :global(.slick-slide) img {
+  border-radius: 8px; /* Bo góc cho chính tấm ảnh bên trong */
+  object-fit: contain !important; /* Giữ tỷ lệ áo chuẩn, không bị béo */
+}
+/* --- PHẦN THÊM MỚI ĐỂ HIỆN NÚT --- */
+
+/* 1. Làm hiện và tạo hình cho 2 nút tròn đen mờ */
+.slider :global(.slick-prev),
+.slider :global(.slick-next) {
+z-index: 10;            /* Cho nút nổi lên trên ảnh */
+width: 40px;            /* Độ rộng nút */
+height: 40px;           /* Độ cao nút */
+background: rgba(0, 0, 0, 0.3) !important; /* Nền đen mờ */
+border-radius: 50%;     /* Bo tròn */
+display: flex !important;
+align-items: center;
+justify-content: center;
+}
+
+/* 2. Làm hiện mũi tên trắng bên trong nút */
+.slider :global(.slick-prev:before),
+.slider :global(.slick-next:before) {
+color: #ffffff !important; /* Mũi tên màu trắng */
+font-size: 20px;           /* Kích thước mũi tên */
+opacity: 1;                /* Hiện rõ 100% */
+}
+
+/* 3. Đặt nút bên trái vào đúng vị trí */
+.slider :global(.slick-prev) {
+left: 15px;
+}
+
+/* 4. Đặt nút bên phải vào đúng vị trí */
+.slider :global(.slick-next) {
+right: 15px;
+}
+
+/* 5. Khi di chuột vào nút thì nền đậm lên cho đẹp */
+.slider :global(.slick-prev:hover),
+.slider :global(.slick-next:hover) {
+background: rgba(0, 0, 0, 0.7) !important;
+}

@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fdf5e6;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: aqua;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Container chứa 12 sản phẩm */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Chia 4 cột */
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Khung sản phẩm - VIỀN ĐỎ */
+.product {
+  width: 200px;
+  height: 450px;
+  border: 2.5px solid #ff0000 !important;
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Nội dung bên trong - VIỀN XANH LÁ */
+.mainProduct {
+  border: 2px solid #00a000 !important;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.imageBox {
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.productName, .productPrice, .productRemain {
+  padding: 5px;
+  text-align: center;
+  border-bottom: 1px solid #000; /* Viền đen theo mẫu */
+}
+
+.price { color: #e74c3c; font-size: 16px; display: block; }
+.oldPrice { text-decoration: line-through; color: #999; font-size: 12px; }
+
+.productRemain {
+  background-color: #ffb200;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Nút mua ngay - VIỀN XANH NGỌC */
+.buyButton {
+  border: 2px solid aqua;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f8fe;
+}
+
+.buyButton a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
